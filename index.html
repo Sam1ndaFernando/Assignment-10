@@ -85,6 +85,39 @@
         </div>
     </div>
 </div>
+<script>
+    let expression = '';
 
+    function appendNumber(number) {
+        expression += number;
+        updateDisplay();
+    }
+
+    function appendOperator(operator) {
+        expression += operator;
+        updateDisplay();
+    }
+
+    function clearDisplay() {
+        expression = '';
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        document.getElementById('display').value = expression;
+    }
+
+    function calculate() {
+        try {
+            const result = eval(expression);
+            document.getElementById('display').value = result;
+            expression = result.toString();
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+            expression = '';
+        }
+    }
+
+</script>
 </body>
 </html>
