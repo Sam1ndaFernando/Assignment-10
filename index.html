@@ -113,6 +113,25 @@
             background: #1b5e20;
         }
 
+        footer {
+            font-family: 'Quicksand', sans-serif;
+            padding: 1em 0;
+            text-align: center;
+            background: linear-gradient(-45deg, rgb(0, 23, 70), rgb(162, 0, 141));
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+
+        footer span {
+            color: #ffffff;
+        }
+
+
+
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -147,6 +166,11 @@
         </div>
     </div>
 </div>
+
+<footer>
+    <span>Calculator. All rights reserved, 2024. © Sam1nda.Fernando.</span>
+</footer>
+
 <script>
     let expression = '';
 
@@ -179,6 +203,7 @@
             expression = '';
         }
     }
+
 
 </script>
 </body>
