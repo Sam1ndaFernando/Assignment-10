@@ -8,53 +8,115 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 100%;
-            height: 100%;
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: white;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff00d2, #001746, #00ffff);
+            background-size: 400% 400%;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
         }
 
         .calculator {
-            background: #3b4444;
-            padding: 20px;
+            background: #f0f0f0;
             border-radius: 10px;
-            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
         }
 
-        input[type="text"] {
-            width: 225px;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 10px;
+        #display {
+            width: 90%;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+            border: none;
+            text-align: right;
+            font-size: 2em;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+
         }
 
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
+            gap: 10px;
+            padding: 20px;
+            background: #f0f0f0;
         }
 
-        button {
-            padding: 10px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007bff;
+        .buttons button {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            font-size: 1.5em;
+            transition: background 0.3s;
+            border-radius: 30px;
+        }
+
+        .buttons button:hover {
+            background: #e0e0e0;
+        }
+
+        .buttons button:active {
+            background: #ccc;
+        }
+
+        .buttons button:nth-child(4n) {
+            background: #f9a825;
             color: #fff;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .buttons button:nth-child(4n):hover {
+            background: #f57f17;
+        }
+
+        .buttons button:nth-child(4n):active {
+            background: #e65100;
+        }
+
+        .buttons button:nth-last-child(3) {
+            background: #d32f2f;
+            color: #fff;
+        }
+
+        .buttons button:nth-last-child(3):hover {
+            background: #c62828;
+        }
+
+        .buttons button:nth-last-child(3):active {
+            background: #b71c1c;
+        }
+
+        .buttons button:nth-last-child(2) {
+            background: #388e3c;
+            color: #fff;
+        }
+
+        .buttons button:nth-last-child(2):hover {
+            background: #2e7d32;
+        }
+
+        .buttons button:nth-last-child(2):active {
+            background: #1b5e20;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
     </style>
